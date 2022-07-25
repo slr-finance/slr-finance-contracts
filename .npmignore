@@ -1,0 +1,12 @@
+.devcontainer
+.vscode
+
+.rollup.cache
+typechain.tsconfig.tsbuildinfo
+cache
+artifacts
+
+test
+docs
+
+.gitignore

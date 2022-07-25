@@ -1,0 +1,1062 @@
+{
+    "methods": {
+        "DEFAULT_ADMIN_ROLE()": {
+            "stateMutability": "view",
+            "code": "function DEFAULT_ADMIN_ROLE() external view returns (bytes32)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            }
+        },
+        "MINTER_ROLE()": {
+            "stateMutability": "view",
+            "code": "function MINTER_ROLE() external view returns (bytes32)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            }
+        },
+        "MIN_TX_AMOUNT_HARD_CAP()": {
+            "stateMutability": "view",
+            "code": "function MIN_TX_AMOUNT_HARD_CAP() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "allowance(address,address)": {
+            "stateMutability": "view",
+            "code": "function allowance(address owner, address spender) external view returns (uint256)",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                },
+                "spender": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC20-allowance}."
+        },
+        "approve(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function approve(address spender, uint256 amount) external nonpayable returns (bool)",
+            "inputs": {
+                "spender": {
+                    "type": "address"
+                },
+                "amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "See {IERC20-approve}. NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on `transferFrom`. This is semantically equivalent to an infinite approval. Requirements: - `spender` cannot be the zero address."
+        },
+        "balanceOf(address)": {
+            "stateMutability": "view",
+            "code": "function balanceOf(address account) external view returns (uint256)",
+            "inputs": {
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC20-balanceOf}."
+        },
+        "blackList(address)": {
+            "stateMutability": "view",
+            "code": "function blackList(address) external view returns (bool)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "decimals()": {
+            "stateMutability": "view",
+            "code": "function decimals() external view returns (uint8)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint8"
+                }
+            },
+            "details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the value {ERC20} uses, unless this function is overridden; NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}."
+        },
+        "decreaseAllowance(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function decreaseAllowance(address spender, uint256 subtractedValue) external nonpayable returns (bool)",
+            "inputs": {
+                "spender": {
+                    "type": "address"
+                },
+                "subtractedValue": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`."
+        },
+        "excludeFromAntiWhale(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function excludeFromAntiWhale(address _account) external nonpayable",
+            "inputs": {
+                "_account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "excludeFromBlackListBlackList(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function excludeFromBlackListBlackList(address account) external nonpayable",
+            "inputs": {
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "excludeFromFee(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function excludeFromFee(address _account) external nonpayable",
+            "inputs": {
+                "_account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "getRoleAdmin(bytes32)": {
+            "stateMutability": "view",
+            "code": "function getRoleAdmin(bytes32 role) external view returns (bytes32)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            },
+            "details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
+        },
+        "getRoleMember(bytes32,uint256)": {
+            "stateMutability": "view",
+            "code": "function getRoleMember(bytes32 role, uint256 index) external view returns (address)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "index": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "Returns one of the accounts that have `role`. `index` must be a value between 0 and {getRoleMemberCount}, non-inclusive. Role bearers are not sorted in any particular way, and their ordering may change at any point. WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information."
+        },
+        "getRoleMemberCount(bytes32)": {
+            "stateMutability": "view",
+            "code": "function getRoleMemberCount(bytes32 role) external view returns (uint256)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "Returns the number of accounts that have `role`. Can be used together with {getRoleMember} to enumerate all bearers of a role."
+        },
+        "grantRole(bytes32,address)": {
+            "stateMutability": "nonpayable",
+            "code": "function grantRole(bytes32 role, address account) external nonpayable",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role."
+        },
+        "hasRole(bytes32,address)": {
+            "stateMutability": "view",
+            "code": "function hasRole(bytes32 role, address account) external view returns (bool)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "Returns `true` if `account` has been granted `role`."
+        },
+        "includeInAntiWhale(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function includeInAntiWhale(address _account) external nonpayable",
+            "inputs": {
+                "_account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "includeInBlackList(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function includeInBlackList(address account) external nonpayable",
+            "inputs": {
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "includeInFee(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function includeInFee(address _account) external nonpayable",
+            "inputs": {
+                "_account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "increaseAllowance(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function increaseAllowance(address spender, uint256 addedValue) external nonpayable returns (bool)",
+            "inputs": {
+                "spender": {
+                    "type": "address"
+                },
+                "addedValue": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address."
+        },
+        "isExcludedFromAntiWhale(address)": {
+            "stateMutability": "view",
+            "code": "function isExcludedFromAntiWhale(address _account) external view returns (bool)",
+            "inputs": {
+                "_account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "isExcludedFromFee(address)": {
+            "stateMutability": "view",
+            "code": "function isExcludedFromFee(address _account) external view returns (bool)",
+            "inputs": {
+                "_account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "mainPairAddress()": {
+            "stateMutability": "view",
+            "code": "function mainPairAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "maxAmountToSell()": {
+            "stateMutability": "view",
+            "code": "function maxAmountToSell() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "maxTxAmount()": {
+            "stateMutability": "view",
+            "code": "function maxTxAmount() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "milkyWay()": {
+            "stateMutability": "nonpayable",
+            "code": "function milkyWay() external nonpayable",
+            "inputs": {},
+            "outputs": {}
+        },
+        "milkyWayAddress()": {
+            "stateMutability": "view",
+            "code": "function milkyWayAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "minAmountToSell()": {
+            "stateMutability": "view",
+            "code": "function minAmountToSell() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "mint(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function mint(address _to, uint256 _amount) external nonpayable",
+            "inputs": {
+                "_to": {
+                    "type": "address"
+                },
+                "_amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {},
+            "details": "Creates `amount` new tokens for `to`. See {ERC20-_mint}. Requirements: - the caller must have the `MINTER_ROLE`."
+        },
+        "name()": {
+            "stateMutability": "view",
+            "code": "function name() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            },
+            "details": "Returns the name of the token."
+        },
+        "owner()": {
+            "stateMutability": "view",
+            "code": "function owner() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "Returns the address of the current owner."
+        },
+        "pairAddresses(address)": {
+            "stateMutability": "view",
+            "code": "function pairAddresses(address) external view returns (bool)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "pairSwapFee()": {
+            "stateMutability": "view",
+            "code": "function pairSwapFee() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "pairedTokenAddress()": {
+            "stateMutability": "view",
+            "code": "function pairedTokenAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "referralActionBuy()": {
+            "stateMutability": "view",
+            "code": "function referralActionBuy() external view returns (uint8)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint8"
+                }
+            }
+        },
+        "referralActionSell()": {
+            "stateMutability": "view",
+            "code": "function referralActionSell() external view returns (uint8)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint8"
+                }
+            }
+        },
+        "referralActionTransfer()": {
+            "stateMutability": "view",
+            "code": "function referralActionTransfer() external view returns (uint8)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint8"
+                }
+            }
+        },
+        "referralServiceAddress()": {
+            "stateMutability": "view",
+            "code": "function referralServiceAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "referrerRewardActionBuyPercent()": {
+            "stateMutability": "view",
+            "code": "function referrerRewardActionBuyPercent() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "referrerRewardActionSellPercent()": {
+            "stateMutability": "view",
+            "code": "function referrerRewardActionSellPercent() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "referrerRewardActionTransferPercent()": {
+            "stateMutability": "view",
+            "code": "function referrerRewardActionTransferPercent() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "referrerRewardDivider()": {
+            "stateMutability": "view",
+            "code": "function referrerRewardDivider() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "renounceOwnership()": {
+            "stateMutability": "nonpayable",
+            "code": "function renounceOwnership() external nonpayable",
+            "inputs": {},
+            "outputs": {},
+            "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+        },
+        "renounceRole(bytes32,address)": {
+            "stateMutability": "nonpayable",
+            "code": "function renounceRole(bytes32 role, address account) external nonpayable",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`."
+        },
+        "revokeRole(bytes32,address)": {
+            "stateMutability": "nonpayable",
+            "code": "function revokeRole(bytes32 role, address account) external nonpayable",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role."
+        },
+        "setAmountToSell(uint256,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setAmountToSell(uint256 _minAmountToSell, uint256 _maxAmountToSell) external nonpayable",
+            "inputs": {
+                "_minAmountToSell": {
+                    "type": "uint256"
+                },
+                "_maxAmountToSell": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "setMaxTxAmount(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setMaxTxAmount(uint256 _maxTxAmount) external nonpayable",
+            "inputs": {
+                "_maxTxAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "setMilkyWayAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setMilkyWayAddress(address _address) external nonpayable",
+            "inputs": {
+                "_address": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "setPairAddress(address,bool)": {
+            "stateMutability": "nonpayable",
+            "code": "function setPairAddress(address _pairAddress, bool _val) external nonpayable",
+            "inputs": {
+                "_pairAddress": {
+                    "type": "address"
+                },
+                "_val": {
+                    "type": "bool"
+                }
+            },
+            "outputs": {}
+        },
+        "setPairSwapFee(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setPairSwapFee(uint256 _fee) external nonpayable",
+            "inputs": {
+                "_fee": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "setReferralServiceAddress(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setReferralServiceAddress(address _address) external nonpayable",
+            "inputs": {
+                "_address": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "setReferrerRewardPercents(uint256,uint256,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setReferrerRewardPercents(uint256 _referrerRewardActionBuyPercent, uint256 _referrerRewardActionSellPercent, uint256 _referrerRewardActionTransferPercent) external nonpayable",
+            "inputs": {
+                "_referrerRewardActionBuyPercent": {
+                    "type": "uint256"
+                },
+                "_referrerRewardActionSellPercent": {
+                    "type": "uint256"
+                },
+                "_referrerRewardActionTransferPercent": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "setTaxBuyFee(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setTaxBuyFee(uint256 _fee) external nonpayable",
+            "inputs": {
+                "_fee": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "setTaxSellFee(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setTaxSellFee(uint256 _fee) external nonpayable",
+            "inputs": {
+                "_fee": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "setTaxTransferFee(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function setTaxTransferFee(uint256 _fee) external nonpayable",
+            "inputs": {
+                "_fee": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "supportsInterface(bytes4)": {
+            "stateMutability": "view",
+            "code": "function supportsInterface(bytes4 interfaceId) external view returns (bool)",
+            "inputs": {
+                "interfaceId": {
+                    "type": "bytes4"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "See {IERC165-supportsInterface}."
+        },
+        "symbol()": {
+            "stateMutability": "view",
+            "code": "function symbol() external view returns (string)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "string"
+                }
+            },
+            "details": "Returns the symbol of the token, usually a shorter version of the name."
+        },
+        "taxBuyFee()": {
+            "stateMutability": "view",
+            "code": "function taxBuyFee() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "taxSellFee()": {
+            "stateMutability": "view",
+            "code": "function taxSellFee() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "taxTransferFee()": {
+            "stateMutability": "view",
+            "code": "function taxTransferFee() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "totalSupply()": {
+            "stateMutability": "view",
+            "code": "function totalSupply() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "See {IERC20-totalSupply}."
+        },
+        "transfer(address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function transfer(address _to, uint256 _amount) external nonpayable returns (bool)",
+            "inputs": {
+                "_to": {
+                    "type": "address"
+                },
+                "_amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "transferFrom(address,address,uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferFrom(address _from, address _to, uint256 _amount) external nonpayable returns (bool)",
+            "inputs": {
+                "_from": {
+                    "type": "address"
+                },
+                "_to": {
+                    "type": "address"
+                },
+                "_amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            }
+        },
+        "transferOwnership(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferOwnership(address newOwner) external nonpayable",
+            "inputs": {
+                "newOwner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+        }
+    },
+    "events": {
+        "Approval": {
+            "code": "event Approval(address indexed owner, address indexed spender, uint256 value)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "spender": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "value": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "ExcludeFromAntiWhale": {
+            "code": "event ExcludeFromAntiWhale(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "ExcludeFromBlackList": {
+            "code": "event ExcludeFromBlackList(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "ExcludeFromFee": {
+            "code": "event ExcludeFromFee(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "IncludeInAntiWhale": {
+            "code": "event IncludeInAntiWhale(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "IncludeInBlackList": {
+            "code": "event IncludeInBlackList(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "IncludeInFee": {
+            "code": "event IncludeInFee(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "OwnershipTransferred": {
+            "code": "event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)",
+            "inputs": {
+                "previousOwner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "newOwner": {
+                    "type": "address",
+                    "indexed": true
+                }
+            }
+        },
+        "RoleAdminChanged": {
+            "code": "event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32",
+                    "indexed": true
+                },
+                "previousAdminRole": {
+                    "type": "bytes32",
+                    "indexed": true
+                },
+                "newAdminRole": {
+                    "type": "bytes32",
+                    "indexed": true
+                }
+            }
+        },
+        "RoleGranted": {
+            "code": "event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32",
+                    "indexed": true
+                },
+                "account": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "sender": {
+                    "type": "address",
+                    "indexed": true
+                }
+            }
+        },
+        "RoleRevoked": {
+            "code": "event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32",
+                    "indexed": true
+                },
+                "account": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "sender": {
+                    "type": "address",
+                    "indexed": true
+                }
+            }
+        },
+        "SellTax": {
+            "code": "event SellTax(uint256 amountIn, uint256 amountOut, address indexed milkyWayAddress)",
+            "inputs": {
+                "amountIn": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "amountOut": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "milkyWayAddress": {
+                    "type": "address",
+                    "indexed": true
+                }
+            }
+        },
+        "SetMilkyWayAddress": {
+            "code": "event SetMilkyWayAddress(address milkyWayAddress)",
+            "inputs": {
+                "milkyWayAddress": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "SetPairAddress": {
+            "code": "event SetPairAddress(address pairAddress, bool val)",
+            "inputs": {
+                "pairAddress": {
+                    "type": "address",
+                    "indexed": false
+                },
+                "val": {
+                    "type": "bool",
+                    "indexed": false
+                }
+            }
+        },
+        "SetReferralServiceAddress": {
+            "code": "event SetReferralServiceAddress(address referralServiceAddress)",
+            "inputs": {
+                "referralServiceAddress": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "Transfer": {
+            "code": "event Transfer(address indexed from, address indexed to, uint256 value)",
+            "inputs": {
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "to": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "value": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "UpdateMaxTxAmount": {
+            "code": "event UpdateMaxTxAmount(uint256 newAmount)",
+            "inputs": {
+                "newAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "UpdatePairSwapFee": {
+            "code": "event UpdatePairSwapFee(uint256 fee)",
+            "inputs": {
+                "fee": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "UpdateReferrerRewardPercents": {
+            "code": "event UpdateReferrerRewardPercents(uint256 referrerRewardActionBuyPercent, uint256 referrerRewardActionSellPercent, uint256 referrerRewardActionTransferPercent)",
+            "inputs": {
+                "referrerRewardActionBuyPercent": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "referrerRewardActionSellPercent": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "referrerRewardActionTransferPercent": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "UpdateSellAmounts": {
+            "code": "event UpdateSellAmounts(uint256 newMinAmount, uint256 maxMinAmount)",
+            "inputs": {
+                "newMinAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                },
+                "maxMinAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "UpdateTaxBuyFee": {
+            "code": "event UpdateTaxBuyFee(uint256 fee)",
+            "inputs": {
+                "fee": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "UpdateTaxSellFee": {
+            "code": "event UpdateTaxSellFee(uint256 fee)",
+            "inputs": {
+                "fee": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "UpdateTaxTransferFee": {
+            "code": "event UpdateTaxTransferFee(uint256 fee)",
+            "inputs": {
+                "fee": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "",
+    "name": "SolarToken"
+}

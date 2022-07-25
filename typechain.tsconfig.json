@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "types": ["node"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "declarationDir": "./dist/types",
+    "outDir": "./dist",
+    "strict": false,
+    "allowJs": false,
+    "rootDir": "./tmp-typechain-prebuild-ts"
+  },
+  "include": ["./tmp-typechain-prebuild-ts/**/*.ts"],
+  "exclude": ["node_modules", "test/**/*"]
+}

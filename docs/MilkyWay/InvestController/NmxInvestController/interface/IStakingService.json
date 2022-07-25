@@ -1,0 +1,260 @@
+{
+    "methods": {
+        "claimReward()": {
+            "stateMutability": "nonpayable",
+            "code": "function claimReward() external nonpayable returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "updates current reward and transfers it to the caller's address"
+        },
+        "claimRewardTo(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function claimRewardTo(address to) external nonpayable returns (uint256)",
+            "inputs": {
+                "to": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "claimRewardToWithoutUpdate(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function claimRewardToWithoutUpdate(address to) external nonpayable returns (uint256)",
+            "inputs": {
+                "to": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "claimWithAuthorization(address,uint128,uint128,uint256,uint8,bytes32,bytes32)": {
+            "stateMutability": "nonpayable",
+            "code": "function claimWithAuthorization(address owner, uint128 nmxAmount, uint128 signedAmount, uint256 deadline, uint8 v, bytes32 r, bytes32 s) external nonpayable",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                },
+                "nmxAmount": {
+                    "type": "uint128"
+                },
+                "signedAmount": {
+                    "type": "uint128"
+                },
+                "deadline": {
+                    "type": "uint256"
+                },
+                "v": {
+                    "type": "uint8"
+                },
+                "r": {
+                    "type": "bytes32"
+                },
+                "s": {
+                    "type": "bytes32"
+                }
+            },
+            "outputs": {}
+        },
+        "getReward()": {
+            "stateMutability": "nonpayable",
+            "code": "function getReward() external nonpayable returns (uint256 unclaimedReward)",
+            "inputs": {},
+            "outputs": {
+                "unclaimedReward": {
+                    "type": "uint256"
+                }
+            },
+            "details": "updates state and returns unclaimed reward amount. Is supposed to be invoked as call from metamask to display current amount of Nmx available"
+        },
+        "stake(uint128)": {
+            "stateMutability": "nonpayable",
+            "code": "function stake(uint128 amount) external nonpayable",
+            "inputs": {
+                "amount": {
+                    "type": "uint128",
+                    "description": "of NMXLP to be staked in the service"
+                }
+            },
+            "outputs": {},
+            "details": "function to stake permitted amount of LP tokens from uniswap contract"
+        },
+        "stakeFrom(address,uint128)": {
+            "stateMutability": "nonpayable",
+            "code": "function stakeFrom(address owner, uint128 amount) external nonpayable",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                },
+                "amount": {
+                    "type": "uint128"
+                }
+            },
+            "outputs": {}
+        },
+        "stakeWithPermit(uint128,uint256,uint8,bytes32,bytes32)": {
+            "stateMutability": "nonpayable",
+            "code": "function stakeWithPermit(uint128 amount, uint256 deadline, uint8 v, bytes32 r, bytes32 s) external nonpayable",
+            "inputs": {
+                "amount": {
+                    "type": "uint128"
+                },
+                "deadline": {
+                    "type": "uint256"
+                },
+                "v": {
+                    "type": "uint8"
+                },
+                "r": {
+                    "type": "bytes32"
+                },
+                "s": {
+                    "type": "bytes32"
+                }
+            },
+            "outputs": {}
+        },
+        "totalStaked()": {
+            "stateMutability": "view",
+            "code": "function totalStaked() external view returns (uint128)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint128"
+                }
+            }
+        },
+        "unstake(uint128)": {
+            "stateMutability": "nonpayable",
+            "code": "function unstake(uint128 amount) external nonpayable",
+            "inputs": {
+                "amount": {
+                    "type": "uint128",
+                    "description": "of NMXLP to be unstaked from the service"
+                }
+            },
+            "outputs": {},
+            "details": "function to unstake LP tokens from the service and transfer to uniswap contract"
+        },
+        "unstakeTo(address,uint128)": {
+            "stateMutability": "nonpayable",
+            "code": "function unstakeTo(address to, uint128 amount) external nonpayable",
+            "inputs": {
+                "to": {
+                    "type": "address"
+                },
+                "amount": {
+                    "type": "uint128"
+                }
+            },
+            "outputs": {}
+        },
+        "unstakeWithAuthorization(address,uint128,uint128,uint256,uint8,bytes32,bytes32)": {
+            "stateMutability": "nonpayable",
+            "code": "function unstakeWithAuthorization(address owner, uint128 amount, uint128 signedAmount, uint256 deadline, uint8 v, bytes32 r, bytes32 s) external nonpayable",
+            "inputs": {
+                "owner": {
+                    "type": "address"
+                },
+                "amount": {
+                    "type": "uint128"
+                },
+                "signedAmount": {
+                    "type": "uint128"
+                },
+                "deadline": {
+                    "type": "uint256"
+                },
+                "v": {
+                    "type": "uint8"
+                },
+                "r": {
+                    "type": "bytes32"
+                },
+                "s": {
+                    "type": "bytes32"
+                }
+            },
+            "outputs": {}
+        }
+    },
+    "events": {
+        "Rewarded": {
+            "code": "event Rewarded(address indexed from, address indexed to, uint128 amount)",
+            "inputs": {
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "to": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint128",
+                    "indexed": false
+                }
+            },
+            "details": "someone unstaked NMXLP"
+        },
+        "Staked": {
+            "code": "event Staked(address indexed owner, uint128 amount)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint128",
+                    "indexed": false
+                }
+            }
+        },
+        "StakingBonusAccrued": {
+            "code": "event StakingBonusAccrued(address indexed staker, uint128 amount)",
+            "inputs": {
+                "staker": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint128",
+                    "indexed": false
+                }
+            },
+            "details": "someone transferred Nmx from the service"
+        },
+        "Unstaked": {
+            "code": "event Unstaked(address indexed from, address indexed to, uint128 amount)",
+            "inputs": {
+                "from": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "to": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint128",
+                    "indexed": false
+                }
+            },
+            "details": "someone is staked NMXLP"
+        }
+    },
+    "errors": {},
+    "path": "/MilkyWay/InvestController/NmxInvestController/interface",
+    "name": "IStakingService"
+}
