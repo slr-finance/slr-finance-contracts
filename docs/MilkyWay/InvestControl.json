@@ -1,0 +1,97 @@
+{
+    "methods": {
+        "bnb()": {
+            "stateMutability": "view",
+            "code": "function bnb() external view returns (contract IERC20)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract IERC20"
+                }
+            }
+        },
+        "changeInvestPoolShare(address,int128)": {
+            "stateMutability": "nonpayable",
+            "code": "function changeInvestPoolShare(address _controller, int128 _share) external nonpayable",
+            "inputs": {
+                "_controller": {
+                    "type": "address"
+                },
+                "_share": {
+                    "type": "int128"
+                }
+            },
+            "outputs": {}
+        },
+        "invest(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function invest(address _controller) external nonpayable",
+            "inputs": {
+                "_controller": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "investAll()": {
+            "stateMutability": "nonpayable",
+            "code": "function investAll() external nonpayable",
+            "inputs": {},
+            "outputs": {}
+        },
+        "investPoolLastIndex()": {
+            "stateMutability": "view",
+            "code": "function investPoolLastIndex() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "investPoolShare(uint256)": {
+            "stateMutability": "view",
+            "code": "function investPoolShare(uint256) external view returns (address controller, int128 share)",
+            "inputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "controller": {
+                    "type": "address"
+                },
+                "share": {
+                    "type": "int128"
+                }
+            }
+        },
+        "setInvestController(address,bool)": {
+            "stateMutability": "nonpayable",
+            "code": "function setInvestController(address _address, bool _active) external nonpayable",
+            "inputs": {
+                "_address": {
+                    "type": "address"
+                },
+                "_active": {
+                    "type": "bool"
+                }
+            },
+            "outputs": {}
+        },
+        "totalInvested()": {
+            "stateMutability": "view",
+            "code": "function totalInvested() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/MilkyWay",
+    "name": "InvestControl"
+}

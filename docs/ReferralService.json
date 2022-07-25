@@ -1,0 +1,486 @@
+{
+    "methods": {
+        "DEFAULT_ADMIN_ROLE()": {
+            "stateMutability": "view",
+            "code": "function DEFAULT_ADMIN_ROLE() external view returns (bytes32)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            }
+        },
+        "PAUSER_ROLE()": {
+            "stateMutability": "view",
+            "code": "function PAUSER_ROLE() external view returns (bytes32)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            }
+        },
+        "REFERRAL_UPDATER_ROLE()": {
+            "stateMutability": "view",
+            "code": "function REFERRAL_UPDATER_ROLE() external view returns (bytes32)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            }
+        },
+        "SET_REWARD_TOKEN()": {
+            "stateMutability": "view",
+            "code": "function SET_REWARD_TOKEN() external view returns (bytes32)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            }
+        },
+        "accrualHistory(address,uint256)": {
+            "stateMutability": "view",
+            "code": "function accrualHistory(address, uint256) external view returns (uint128 amount, address from, uint32 timestamp, uint8 action)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                },
+                "_1": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "amount": {
+                    "type": "uint128"
+                },
+                "from": {
+                    "type": "address"
+                },
+                "timestamp": {
+                    "type": "uint32"
+                },
+                "action": {
+                    "type": "uint8"
+                }
+            },
+            "details": "referrer to accrual history"
+        },
+        "accrualHistoryLength(address)": {
+            "stateMutability": "view",
+            "code": "function accrualHistoryLength(address _referrer) external view returns (uint256)",
+            "inputs": {
+                "_referrer": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "For uiReturns number of accrual history items"
+        },
+        "addReferral(address,address)": {
+            "stateMutability": "nonpayable",
+            "code": "function addReferral(address _referrer, address _referral) external nonpayable",
+            "inputs": {
+                "_referrer": {
+                    "type": "address"
+                },
+                "_referral": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "getRoleAdmin(bytes32)": {
+            "stateMutability": "view",
+            "code": "function getRoleAdmin(bytes32 role) external view returns (bytes32)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bytes32"
+                }
+            },
+            "details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
+        },
+        "getRoleMember(bytes32,uint256)": {
+            "stateMutability": "view",
+            "code": "function getRoleMember(bytes32 role, uint256 index) external view returns (address)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "index": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "Returns one of the accounts that have `role`. `index` must be a value between 0 and {getRoleMemberCount}, non-inclusive. Role bearers are not sorted in any particular way, and their ordering may change at any point. WARNING: When using {getRoleMember} and {getRoleMemberCount}, make sure you perform all queries on the same block. See the following https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post] for more information."
+        },
+        "getRoleMemberCount(bytes32)": {
+            "stateMutability": "view",
+            "code": "function getRoleMemberCount(bytes32 role) external view returns (uint256)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "Returns the number of accounts that have `role`. Can be used together with {getRoleMember} to enumerate all bearers of a role."
+        },
+        "grantRole(bytes32,address)": {
+            "stateMutability": "nonpayable",
+            "code": "function grantRole(bytes32 role, address account) external nonpayable",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role."
+        },
+        "hasRole(bytes32,address)": {
+            "stateMutability": "view",
+            "code": "function hasRole(bytes32 role, address account) external view returns (bool)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "Returns `true` if `account` has been granted `role`."
+        },
+        "owner()": {
+            "stateMutability": "view",
+            "code": "function owner() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "Returns the address of the current owner."
+        },
+        "pause()": {
+            "stateMutability": "nonpayable",
+            "code": "function pause() external nonpayable",
+            "inputs": {},
+            "outputs": {},
+            "details": "Pauses all token transfers. See {ERC20Pausable} and {Pausable-_pause}. Requirements: - the caller must have the `PAUSER_ROLE`."
+        },
+        "paused()": {
+            "stateMutability": "view",
+            "code": "function paused() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "Returns true if the contract is paused, and false otherwise."
+        },
+        "referrals(address,uint256)": {
+            "stateMutability": "view",
+            "code": "function referrals(address, uint256) external view returns (address account, uint32 timestamp)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                },
+                "_1": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "account": {
+                    "type": "address"
+                },
+                "timestamp": {
+                    "type": "uint32"
+                }
+            },
+            "details": "referrer to referrals"
+        },
+        "referralsLength(address)": {
+            "stateMutability": "view",
+            "code": "function referralsLength(address _referrer) external view returns (uint256)",
+            "inputs": {
+                "_referrer": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "For uiReturns number of referrals"
+        },
+        "referrerClaim()": {
+            "stateMutability": "nonpayable",
+            "code": "function referrerClaim() external nonpayable",
+            "inputs": {},
+            "outputs": {}
+        },
+        "referrerRewardToken()": {
+            "stateMutability": "view",
+            "code": "function referrerRewardToken() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "earning token address"
+        },
+        "referrers(address)": {
+            "stateMutability": "view",
+            "code": "function referrers(address) external view returns (address)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "referral to referrer"
+        },
+        "referrersRewards(address)": {
+            "stateMutability": "view",
+            "code": "function referrersRewards(address) external view returns (uint256 reward, uint256 rewarded)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "reward": {
+                    "type": "uint256"
+                },
+                "rewarded": {
+                    "type": "uint256"
+                }
+            },
+            "details": "referrer to reward"
+        },
+        "renounceOwnership()": {
+            "stateMutability": "nonpayable",
+            "code": "function renounceOwnership() external nonpayable",
+            "inputs": {},
+            "outputs": {},
+            "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+        },
+        "renounceRole(bytes32,address)": {
+            "stateMutability": "nonpayable",
+            "code": "function renounceRole(bytes32 role, address account) external nonpayable",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`."
+        },
+        "revokeRole(bytes32,address)": {
+            "stateMutability": "nonpayable",
+            "code": "function revokeRole(bytes32 role, address account) external nonpayable",
+            "inputs": {
+                "role": {
+                    "type": "bytes32"
+                },
+                "account": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role."
+        },
+        "saveReferrerReward(address,uint128,uint8)": {
+            "stateMutability": "nonpayable",
+            "code": "function saveReferrerReward(address _refferal, uint128 _amount, uint8 _action) external nonpayable",
+            "inputs": {
+                "_refferal": {
+                    "type": "address"
+                },
+                "_amount": {
+                    "type": "uint128"
+                },
+                "_action": {
+                    "type": "uint8"
+                }
+            },
+            "outputs": {}
+        },
+        "setReferrerRewardToken(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setReferrerRewardToken(address _referrerRewardToken) external nonpayable",
+            "inputs": {
+                "_referrerRewardToken": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "supportsInterface(bytes4)": {
+            "stateMutability": "view",
+            "code": "function supportsInterface(bytes4 interfaceId) external view returns (bool)",
+            "inputs": {
+                "interfaceId": {
+                    "type": "bytes4"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "See {IERC165-supportsInterface}."
+        },
+        "totalPendingRewards()": {
+            "stateMutability": "view",
+            "code": "function totalPendingRewards() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "details": "Total pending rewards"
+        },
+        "transferOwnership(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferOwnership(address newOwner) external nonpayable",
+            "inputs": {
+                "newOwner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+        },
+        "unpause()": {
+            "stateMutability": "nonpayable",
+            "code": "function unpause() external nonpayable",
+            "inputs": {},
+            "outputs": {},
+            "details": "Unpauses all token transfers. See {ERC20Pausable} and {Pausable-_unpause}. Requirements: - the caller must have the `PAUSER_ROLE`."
+        }
+    },
+    "events": {
+        "OwnershipTransferred": {
+            "code": "event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)",
+            "inputs": {
+                "previousOwner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "newOwner": {
+                    "type": "address",
+                    "indexed": true
+                }
+            }
+        },
+        "Paused": {
+            "code": "event Paused(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "RoleAdminChanged": {
+            "code": "event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32",
+                    "indexed": true
+                },
+                "previousAdminRole": {
+                    "type": "bytes32",
+                    "indexed": true
+                },
+                "newAdminRole": {
+                    "type": "bytes32",
+                    "indexed": true
+                }
+            }
+        },
+        "RoleGranted": {
+            "code": "event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32",
+                    "indexed": true
+                },
+                "account": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "sender": {
+                    "type": "address",
+                    "indexed": true
+                }
+            }
+        },
+        "RoleRevoked": {
+            "code": "event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)",
+            "inputs": {
+                "role": {
+                    "type": "bytes32",
+                    "indexed": true
+                },
+                "account": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "sender": {
+                    "type": "address",
+                    "indexed": true
+                }
+            }
+        },
+        "Unpaused": {
+            "code": "event Unpaused(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "",
+    "name": "ReferralService"
+}

@@ -1,0 +1,472 @@
+{
+    "methods": {
+        "earningToken()": {
+            "stateMutability": "view",
+            "code": "function earningToken() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "earning token address"
+        },
+        "getApy(uint128,uint128)": {
+            "stateMutability": "pure",
+            "code": "function getApy(uint128 apr, uint128 times) external pure returns (uint128)",
+            "inputs": {
+                "apr": {
+                    "type": "uint128"
+                },
+                "times": {
+                    "type": "uint128"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint128"
+                }
+            },
+            "details": "For ui"
+        },
+        "getReward(address)": {
+            "stateMutability": "view",
+            "code": "function getReward(address _owner) external view returns (uint128)",
+            "inputs": {
+                "_owner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint128"
+                }
+            },
+            "details": "For ui"
+        },
+        "getStaker(address)": {
+            "stateMutability": "view",
+            "code": "function getStaker(address _owner) external view returns (uint16 poolId, uint128 amount, uint32 lock, uint32 startStaking, uint32 timestamp, uint128 reward)",
+            "inputs": {
+                "_owner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "poolId": {
+                    "type": "uint16"
+                },
+                "amount": {
+                    "type": "uint128"
+                },
+                "lock": {
+                    "type": "uint32"
+                },
+                "startStaking": {
+                    "type": "uint32"
+                },
+                "timestamp": {
+                    "type": "uint32"
+                },
+                "reward": {
+                    "type": "uint128"
+                }
+            },
+            "details": "For uiReturns staker state"
+        },
+        "getStakerHistory(address,uint16)": {
+            "stateMutability": "view",
+            "code": "function getStakerHistory(address _owner, uint16 _poolId) external view returns (uint16 poolId, uint128 amount, uint128 earned, uint32 lock)",
+            "inputs": {
+                "_owner": {
+                    "type": "address"
+                },
+                "_poolId": {
+                    "type": "uint16"
+                }
+            },
+            "outputs": {
+                "poolId": {
+                    "type": "uint16"
+                },
+                "amount": {
+                    "type": "uint128"
+                },
+                "earned": {
+                    "type": "uint128"
+                },
+                "lock": {
+                    "type": "uint32"
+                }
+            },
+            "details": "For ui"
+        },
+        "migrate(uint16,uint128,uint32)": {
+            "stateMutability": "nonpayable",
+            "code": "function migrate(uint16 _poolId, uint128 _amount, uint32 _lock) external nonpayable",
+            "inputs": {
+                "_poolId": {
+                    "type": "uint16"
+                },
+                "_amount": {
+                    "type": "uint128"
+                },
+                "_lock": {
+                    "type": "uint32"
+                }
+            },
+            "outputs": {}
+        },
+        "owner()": {
+            "stateMutability": "view",
+            "code": "function owner() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "Returns the address of the current owner."
+        },
+        "paused()": {
+            "stateMutability": "view",
+            "code": "function paused() external view returns (bool)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "bool"
+                }
+            },
+            "details": "Returns true if the contract is paused, and false otherwise."
+        },
+        "referralActionClaim()": {
+            "stateMutability": "view",
+            "code": "function referralActionClaim() external view returns (uint8)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint8"
+                }
+            }
+        },
+        "referralContract()": {
+            "stateMutability": "view",
+            "code": "function referralContract() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "referrerRewardDivider()": {
+            "stateMutability": "view",
+            "code": "function referrerRewardDivider() external view returns (uint128)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint128"
+                }
+            }
+        },
+        "referrerRewardPercent()": {
+            "stateMutability": "view",
+            "code": "function referrerRewardPercent() external view returns (uint128)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint128"
+                }
+            }
+        },
+        "renounceOwnership()": {
+            "stateMutability": "nonpayable",
+            "code": "function renounceOwnership() external nonpayable",
+            "inputs": {},
+            "outputs": {},
+            "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+        },
+        "secPerDay()": {
+            "stateMutability": "view",
+            "code": "function secPerDay() external view returns (uint32)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint32"
+                }
+            }
+        },
+        "setReferralContract(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function setReferralContract(address _referralContract) external nonpayable",
+            "inputs": {
+                "_referralContract": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "setReferrerRewardPercent(uint128)": {
+            "stateMutability": "nonpayable",
+            "code": "function setReferrerRewardPercent(uint128 _referrerRewardPercent) external nonpayable",
+            "inputs": {
+                "_referrerRewardPercent": {
+                    "type": "uint128"
+                }
+            },
+            "outputs": {}
+        },
+        "slrTokenAddress()": {
+            "stateMutability": "view",
+            "code": "function slrTokenAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "staking token address"
+        },
+        "stake(uint16,uint128,uint32,address)": {
+            "stateMutability": "nonpayable",
+            "code": "function stake(uint16 _poolId, uint128 _amount, uint32 _lock, address _referrer) external nonpayable",
+            "inputs": {
+                "_poolId": {
+                    "type": "uint16"
+                },
+                "_amount": {
+                    "type": "uint128",
+                    "description": "of NMXLP to be staked in the service"
+                },
+                "_lock": {
+                    "type": "uint32"
+                },
+                "_referrer": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "function to stake permitted amount of LP tokens from uniswap contract"
+        },
+        "stakers(address)": {
+            "stateMutability": "view",
+            "code": "function stakers(address) external view returns (uint16 poolId, uint128 initalAmount, uint128 amount, uint32 lock, uint32 startStaking)",
+            "inputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "poolId": {
+                    "type": "uint16"
+                },
+                "initalAmount": {
+                    "type": "uint128"
+                },
+                "amount": {
+                    "type": "uint128"
+                },
+                "lock": {
+                    "type": "uint32"
+                },
+                "startStaking": {
+                    "type": "uint32"
+                }
+            },
+            "details": "mapping of pool id to mapping of staker's address to its state"
+        },
+        "state(uint16)": {
+            "stateMutability": "view",
+            "code": "function state(uint16) external view returns (uint128 totalStaked, uint16 id, uint128 apr, uint32 minLock, uint32 maxLock, uint128 withdrawalFees)",
+            "inputs": {
+                "_0": {
+                    "type": "uint16"
+                }
+            },
+            "outputs": {
+                "totalStaked": {
+                    "type": "uint128"
+                },
+                "id": {
+                    "type": "uint16"
+                },
+                "apr": {
+                    "type": "uint128"
+                },
+                "minLock": {
+                    "type": "uint32"
+                },
+                "maxLock": {
+                    "type": "uint32"
+                },
+                "withdrawalFees": {
+                    "type": "uint128"
+                }
+            },
+            "details": "mapping of pool id to its state"
+        },
+        "totalStaked(uint16)": {
+            "stateMutability": "view",
+            "code": "function totalStaked(uint16 _poolId) external view returns (uint128 amount)",
+            "inputs": {
+                "_poolId": {
+                    "type": "uint16"
+                }
+            },
+            "outputs": {
+                "amount": {
+                    "type": "uint128"
+                }
+            },
+            "details": "For ui"
+        },
+        "transferOwnership(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferOwnership(address newOwner) external nonpayable",
+            "inputs": {
+                "newOwner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+        },
+        "unstake(uint16)": {
+            "stateMutability": "nonpayable",
+            "code": "function unstake(uint16 _poolId) external nonpayable",
+            "inputs": {
+                "_poolId": {
+                    "type": "uint16"
+                }
+            },
+            "outputs": {}
+        },
+        "unstakeWithFee(uint16)": {
+            "stateMutability": "nonpayable",
+            "code": "function unstakeWithFee(uint16 _poolId) external nonpayable",
+            "inputs": {
+                "_poolId": {
+                    "type": "uint16"
+                }
+            },
+            "outputs": {},
+            "details": "function to unstake LP tokens from the service and transfer to uniswap contract"
+        }
+    },
+    "events": {
+        "Migrate": {
+            "code": "event Migrate(address indexed owner, uint128 migratedAmount, uint128 amount, uint16 poolId)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "migratedAmount": {
+                    "type": "uint128",
+                    "indexed": false
+                },
+                "amount": {
+                    "type": "uint128",
+                    "indexed": false
+                },
+                "poolId": {
+                    "type": "uint16",
+                    "indexed": false
+                }
+            },
+            "details": "someone is staked tokens"
+        },
+        "OwnershipTransferred": {
+            "code": "event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)",
+            "inputs": {
+                "previousOwner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "newOwner": {
+                    "type": "address",
+                    "indexed": true
+                }
+            }
+        },
+        "Paused": {
+            "code": "event Paused(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "Staked": {
+            "code": "event Staked(address indexed owner, uint128 amount, uint16 poolId)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint128",
+                    "indexed": false
+                },
+                "poolId": {
+                    "type": "uint16",
+                    "indexed": false
+                }
+            }
+        },
+        "Unpaused": {
+            "code": "event Unpaused(address account)",
+            "inputs": {
+                "account": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "Unstaked": {
+            "code": "event Unstaked(address indexed owner, uint128 amount, uint128 reward, uint128 fee)",
+            "inputs": {
+                "owner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "amount": {
+                    "type": "uint128",
+                    "indexed": false
+                },
+                "reward": {
+                    "type": "uint128",
+                    "indexed": false
+                },
+                "fee": {
+                    "type": "uint128",
+                    "indexed": false
+                }
+            },
+            "details": "someone is migrated tokens"
+        },
+        "UpdateReferralContract": {
+            "code": "event UpdateReferralContract(address referralContract)",
+            "inputs": {
+                "referralContract": {
+                    "type": "address",
+                    "indexed": false
+                }
+            }
+        },
+        "UpdateReferrerRewardPercent": {
+            "code": "event UpdateReferrerRewardPercent(uint128 percent)",
+            "inputs": {
+                "percent": {
+                    "type": "uint128",
+                    "indexed": false
+                }
+            },
+            "details": "someone unstaked tokens"
+        }
+    },
+    "errors": {},
+    "path": "",
+    "name": "StakingService"
+}

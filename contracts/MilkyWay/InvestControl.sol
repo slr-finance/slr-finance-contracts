@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.12;
+pragma solidity 0.8.9;
 
 import "abdk-libraries-solidity/ABDKMath64x64.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";

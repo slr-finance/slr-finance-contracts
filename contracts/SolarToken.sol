@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.12;
+pragma solidity 0.8.9;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/utils/math/SafeCast.sol";
@@ -30,13 +30,14 @@ contract SolarToken is ERC20("SOLAR", "SLR"), AccessControlEnumerable, Ownable {
   uint256 public pairSwapFee = 200;
   address public milkyWayAddress;
   address public referralServiceAddress;
-  address public pairAddress;
   address public pairedTokenAddress;
   uint256 public constant MIN_TX_AMOUNT_HARD_CAP = 1 * 10 ** 18;
   bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+  address public immutable mainPairAddress;
+  mapping(address => bool) public pairAddresses;
+  mapping(address => bool) public blackList;
   mapping(address => bool) private excludedFromFee;
   mapping(address => bool) private excludedFromAntiWhale;
-  mapping(address => bool) private blackList;
 
   event UpdateMaxTxAmount(uint256 newAmount);
   event UpdateSellAmounts(uint256 newMinAmount, uint256 maxMinAmount);
@@ -54,12 +55,14 @@ contract SolarToken is ERC20("SOLAR", "SLR"), AccessControlEnumerable, Ownable {
   event UpdateReferrerRewardPercents(uint256 referrerRewardActionBuyPercent, uint256 referrerRewardActionSellPercent, uint256 referrerRewardActionTransferPercent);
   event IncludeInBlackList(address account);
   event ExcludeFromBlackList(address account);
+  event SetPairAddress(address pairAddress, bool val);
 
   constructor(address _factoryAddress, address _pairedTokenAddress) {
     _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
     _setupRole(MINTER_ROLE, _msgSender());
     
-    pairAddress = IFactory(_factoryAddress).createPair(address(this), _pairedTokenAddress);
+    mainPairAddress = IFactory(_factoryAddress).createPair(address(this), _pairedTokenAddress);
+    pairAddresses[mainPairAddress] = true;
     
     excludedFromFee[_msgSender()] = true;
     excludedFromFee[address(this)] = true;
@@ -97,7 +100,7 @@ contract SolarToken is ERC20("SOLAR", "SLR"), AccessControlEnumerable, Ownable {
       if (milkyWayAddress != address(0)) {
         uint256 amountOut = SwapMath.getAmountOutByPair(
           amountIn,
-          pairAddress,
+          mainPairAddress,
           address(this),
           pairedTokenAddress,
           pairSwapFee
@@ -110,9 +113,9 @@ contract SolarToken is ERC20("SOLAR", "SLR"), AccessControlEnumerable, Ownable {
           amountOut
         );
 
-        _transfer(address(this), pairAddress, amountIn);
+        _transfer(address(this), mainPairAddress, amountIn);
 
-        IPair(pairAddress).swap(amountOut0, amountOut1, milkyWayAddress, new bytes(0));
+        IPair(mainPairAddress).swap(amountOut0, amountOut1, milkyWayAddress, new bytes(0));
 
         emit SellTax(amountIn, amountOut, milkyWayAddress);
       }
@@ -160,9 +163,9 @@ contract SolarToken is ERC20("SOLAR", "SLR"), AccessControlEnumerable, Ownable {
   }
 
   function calculateTaxFee(address _from, address _to, uint256 _amount) internal view returns(uint256, uint8, uint256) {
-    if (_to == pairAddress) {
+    if (pairAddresses[_to]) {
       return (_amount * taxSellFee / 10000, referralActionSell, referrerRewardActionSellPercent);
-    } else if (_from == pairAddress) {
+    } else if (pairAddresses[_from]) {
       return (_amount * taxBuyFee / 10000, referralActionBuy, referrerRewardActionBuyPercent);
     }
 
@@ -297,5 +300,13 @@ contract SolarToken is ERC20("SOLAR", "SLR"), AccessControlEnumerable, Ownable {
     blackList[account] = false;
 
     emit ExcludeFromBlackList(account);
+  }
+
+  function setPairAddress(address _pairAddress, bool _val) public onlyOwner {
+    require(_pairAddress != mainPairAddress, "Can not change main pair");
+
+    pairAddresses[_pairAddress] = _val;
+
+    emit SetPairAddress(_pairAddress, _val);
   }
 }

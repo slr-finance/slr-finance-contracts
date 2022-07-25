@@ -1,0 +1,152 @@
+{
+    "methods": {
+        "bnbAddress()": {
+            "stateMutability": "view",
+            "code": "function bnbAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "claimAndBuyBack()": {
+            "stateMutability": "nonpayable",
+            "code": "function claimAndBuyBack() external nonpayable",
+            "inputs": {},
+            "outputs": {}
+        },
+        "factoryAddress()": {
+            "stateMutability": "view",
+            "code": "function factoryAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "getTokenPriceInBnb(address)": {
+            "stateMutability": "view",
+            "code": "function getTokenPriceInBnb(address _targetToken) external view returns (uint256)",
+            "inputs": {
+                "_targetToken": {
+                    "type": "address"
+                }
+            },
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "invest(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function invest(uint256 _investingBnbAmount) external nonpayable returns (uint256 investingAmount)",
+            "inputs": {
+                "_investingBnbAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "investingAmount": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "investedBnb()": {
+            "stateMutability": "view",
+            "code": "function investedBnb() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "investedTokensByBnbPrice()": {
+            "stateMutability": "view",
+            "code": "function investedTokensByBnbPrice() external view returns (uint256 priceInBnb)",
+            "inputs": {},
+            "outputs": {
+                "priceInBnb": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "investingTokenAddress()": {
+            "stateMutability": "view",
+            "code": "function investingTokenAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "investingTokenType()": {
+            "stateMutability": "view",
+            "code": "function investingTokenType() external view returns (enum IBaseInvestController.InvestingTokenType)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "enum IBaseInvestController.InvestingTokenType"
+                }
+            }
+        },
+        "rewardsTokenAddress()": {
+            "stateMutability": "view",
+            "code": "function rewardsTokenAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "stakingServiceAddress()": {
+            "stateMutability": "view",
+            "code": "function stakingServiceAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "swapFee()": {
+            "stateMutability": "view",
+            "code": "function swapFee() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "withdrawalAndRefoundToMilkyWal(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function withdrawalAndRefoundToMilkyWal(uint256 _amount) external nonpayable",
+            "inputs": {
+                "_amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "withdrawnBnb()": {
+            "stateMutability": "view",
+            "code": "function withdrawnBnb() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/MilkyWay/InvestController/NmxInvestController",
+    "name": "NmxInvestController"
+}

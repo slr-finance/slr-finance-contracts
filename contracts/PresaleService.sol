@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.12;
+pragma solidity 0.8.9;
 
 import "@openzeppelin/contracts/token/ERC20/presets/ERC20PresetMinterPauser.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
@@ -10,12 +10,16 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./ReferralService.sol";
 import "./SolarToken.sol";
-import "./interface/IPancakeRouter02.sol";
+import "./interface/IRouter02.sol";
 
 contract PresaleService is ERC20PresetMinterPauser("PresaleSLR", "PresaleSLR"), ReentrancyGuard, Ownable {
   using SafeCast for uint256;
   using SafeERC20 for IERC20;
 
+  /**
+   * На этот адрес будет отправлена ликвидность после листинга
+   */
+  address public constant deadAddress = 0x000000000000000000000000000000000000dEaD;
   mapping(address => bool) public joined;
 
   /**
@@ -45,6 +49,7 @@ contract PresaleService is ERC20PresetMinterPauser("PresaleSLR", "PresaleSLR"), 
   event SetDiscount(address indexed owner, uint256 discount);
   event UpdateTokenAddress(address tokenAddress);
   event UpdateRouterAddress(address tokenAddress);
+  event TryTransfer(address from, address to, uint256 amount);
 
   constructor(address _referralContractAddress) {
     referralContractAddress = _referralContractAddress;
@@ -157,6 +162,8 @@ contract PresaleService is ERC20PresetMinterPauser("PresaleSLR", "PresaleSLR"), 
   }
 
   function transfer(address to, uint256 amount) public override returns (bool) {
+    emit TryTransfer(_msgSender(), to, amount);
+
     revert('');
   }
 
@@ -165,6 +172,8 @@ contract PresaleService is ERC20PresetMinterPauser("PresaleSLR", "PresaleSLR"), 
     address to,
     uint256 amount
   ) public virtual override returns (bool) {
+    emit TryTransfer(from, to, amount);
+
     revert('');
   }
 
@@ -202,12 +211,12 @@ contract PresaleService is ERC20PresetMinterPauser("PresaleSLR", "PresaleSLR"), 
     SolarToken(tokenAddress).mint(address(this), amountToken);
 
     IERC20(tokenAddress).safeApprove(routerAddress, amountToken);
-    IPancakeRouter02(routerAddress).addLiquidityETH{value: amountETH}(
+    IRouter02(routerAddress).addLiquidityETH{value: amountETH}(
       tokenAddress,
       amountToken,
       amountToken,
       amountETH,
-      address(0),
+      deadAddress,
       block.timestamp
     );
 

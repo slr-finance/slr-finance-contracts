@@ -1,0 +1,38 @@
+{
+    "methods": {
+        "claimAndBuyBack()": {
+            "stateMutability": "nonpayable",
+            "code": "function claimAndBuyBack() external nonpayable",
+            "inputs": {},
+            "outputs": {}
+        },
+        "invest(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function invest(uint256 _investingBnbAmount) external nonpayable returns (uint256 investingAmount)",
+            "inputs": {
+                "_investingBnbAmount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "investingAmount": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "withdrawalAndRefoundToMilkyWal(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function withdrawalAndRefoundToMilkyWal(uint256 _amount) external nonpayable",
+            "inputs": {
+                "_amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        }
+    },
+    "events": {},
+    "errors": {},
+    "path": "/MilkyWay/interface",
+    "name": "IBaseInvestController"
+}

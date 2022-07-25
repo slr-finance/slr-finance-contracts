@@ -1,0 +1,279 @@
+{
+    "methods": {
+        "baybackStat(uint256)": {
+            "stateMutability": "view",
+            "code": "function baybackStat(uint256) external view returns (uint128 bnbAmount, uint128 slrAmount, uint128 lpMinted, uint32 timestamp)",
+            "inputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "bnbAmount": {
+                    "type": "uint128"
+                },
+                "slrAmount": {
+                    "type": "uint128"
+                },
+                "lpMinted": {
+                    "type": "uint128"
+                },
+                "timestamp": {
+                    "type": "uint32"
+                }
+            }
+        },
+        "baybackStatLength()": {
+            "stateMutability": "view",
+            "code": "function baybackStatLength() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "bnb()": {
+            "stateMutability": "view",
+            "code": "function bnb() external view returns (contract IERC20)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "contract IERC20"
+                }
+            }
+        },
+        "bnbAddress()": {
+            "stateMutability": "view",
+            "code": "function bnbAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "buyBackFromRewards(uint256)": {
+            "stateMutability": "nonpayable",
+            "code": "function buyBackFromRewards(uint256 _amount) external nonpayable",
+            "inputs": {
+                "_amount": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {}
+        },
+        "calcAmountToBayback()": {
+            "stateMutability": "view",
+            "code": "function calcAmountToBayback() external view returns (uint256 amountToBayback)",
+            "inputs": {},
+            "outputs": {
+                "amountToBayback": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "calcAmountToInvest()": {
+            "stateMutability": "view",
+            "code": "function calcAmountToInvest() external view returns (uint256 amountToInvest)",
+            "inputs": {},
+            "outputs": {
+                "amountToInvest": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "changeInvestPoolShare(address,int128)": {
+            "stateMutability": "nonpayable",
+            "code": "function changeInvestPoolShare(address _controller, int128 _share) external nonpayable",
+            "inputs": {
+                "_controller": {
+                    "type": "address"
+                },
+                "_share": {
+                    "type": "int128"
+                }
+            },
+            "outputs": {}
+        },
+        "doBuyBack()": {
+            "stateMutability": "nonpayable",
+            "code": "function doBuyBack() external nonpayable",
+            "inputs": {},
+            "outputs": {}
+        },
+        "invest(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function invest(address _controller) external nonpayable",
+            "inputs": {
+                "_controller": {
+                    "type": "address"
+                }
+            },
+            "outputs": {}
+        },
+        "investAll()": {
+            "stateMutability": "nonpayable",
+            "code": "function investAll() external nonpayable",
+            "inputs": {},
+            "outputs": {}
+        },
+        "investPoolLastIndex()": {
+            "stateMutability": "view",
+            "code": "function investPoolLastIndex() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "investPoolShare(uint256)": {
+            "stateMutability": "view",
+            "code": "function investPoolShare(uint256) external view returns (address controller, int128 share)",
+            "inputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "controller": {
+                    "type": "address"
+                },
+                "share": {
+                    "type": "int128"
+                }
+            }
+        },
+        "investStat(uint256)": {
+            "stateMutability": "view",
+            "code": "function investStat(uint256) external view returns (uint128 amount, uint32 timestamp)",
+            "inputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            },
+            "outputs": {
+                "amount": {
+                    "type": "uint128"
+                },
+                "timestamp": {
+                    "type": "uint32"
+                }
+            }
+        },
+        "owner()": {
+            "stateMutability": "view",
+            "code": "function owner() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            },
+            "details": "Returns the address of the current owner."
+        },
+        "renounceOwnership()": {
+            "stateMutability": "nonpayable",
+            "code": "function renounceOwnership() external nonpayable",
+            "inputs": {},
+            "outputs": {},
+            "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+        },
+        "setInvestController(address,bool)": {
+            "stateMutability": "nonpayable",
+            "code": "function setInvestController(address _address, bool _active) external nonpayable",
+            "inputs": {
+                "_address": {
+                    "type": "address"
+                },
+                "_active": {
+                    "type": "bool"
+                }
+            },
+            "outputs": {}
+        },
+        "slrAddress()": {
+            "stateMutability": "view",
+            "code": "function slrAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "slrPairAddress()": {
+            "stateMutability": "view",
+            "code": "function slrPairAddress() external view returns (address)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "address"
+                }
+            }
+        },
+        "totalBayback()": {
+            "stateMutability": "view",
+            "code": "function totalBayback() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "totalInvested()": {
+            "stateMutability": "view",
+            "code": "function totalInvested() external view returns (uint256)",
+            "inputs": {},
+            "outputs": {
+                "_0": {
+                    "type": "uint256"
+                }
+            }
+        },
+        "transferOwnership(address)": {
+            "stateMutability": "nonpayable",
+            "code": "function transferOwnership(address newOwner) external nonpayable",
+            "inputs": {
+                "newOwner": {
+                    "type": "address"
+                }
+            },
+            "outputs": {},
+            "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+        }
+    },
+    "events": {
+        "Bayback": {
+            "code": "event Bayback(uint128 bnbAmount, uint256 slrAmount)",
+            "inputs": {
+                "bnbAmount": {
+                    "type": "uint128",
+                    "indexed": false
+                },
+                "slrAmount": {
+                    "type": "uint256",
+                    "indexed": false
+                }
+            }
+        },
+        "OwnershipTransferred": {
+            "code": "event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)",
+            "inputs": {
+                "previousOwner": {
+                    "type": "address",
+                    "indexed": true
+                },
+                "newOwner": {
+                    "type": "address",
+                    "indexed": true
+                }
+            }
+        }
+    },
+    "errors": {},
+    "path": "/MilkyWay",
+    "name": "MilkyWay"
+}
