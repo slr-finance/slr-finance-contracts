@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.12;
+pragma solidity 0.8.9;
 
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/math/SafeCast.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "../interface/IPancakeRouter02.sol";
+import "../interface/IRouter02.sol";
 import "../interface/IPair.sol";
 import "../utils/Recoverable.sol";
 import "../lib/SwapMath.sol";
@@ -39,7 +39,7 @@ contract MilkyWay is InvestControl, Ownable {
     uint32 timestamp;
   }
 
-  IPancakeRouter02 slrRouter;
+  IRouter02 slrRouter;
   InvestInfo[] public investStat;
 
   uint256 public totalBayback;
@@ -56,10 +56,10 @@ contract MilkyWay is InvestControl, Ownable {
       'Invalid params'
     );
 
-    slrRouter = IPancakeRouter02(_slrRouterAddress);
+    slrRouter = IRouter02(_slrRouterAddress);
     slrAddress = _slrAddress;
     bnbAddress = _bnbAddress;
-    slrPairAddress = SolarToken(slrAddress).pairAddress();
+    slrPairAddress = SolarToken(slrAddress).mainPairAddress();
   }
 
   // todo: Проверить расчет calcAmountToBayback и calcAmountToInvest, не уверен что не упадет с ошибкой при каком-то состояние
@@ -326,7 +326,7 @@ contract MilkyWay is InvestControl, Ownable {
 
   //   uint256 prevBalance = IERC20(pairedTokenAddress).balanceOf(address(this));
   //   // make the swap
-  //   IPancakeRouter02(slrRouterAddress).swapExactTokensForTokensSupportingFeeOnTransferTokens(
+  //   IRouter02(slrRouterAddress).swapExactTokensForTokensSupportingFeeOnTransferTokens(
   //     amountIn,
   //     minAmountOut, // accept any amount of ETH
   //     path,
